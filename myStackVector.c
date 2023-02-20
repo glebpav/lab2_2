@@ -16,7 +16,7 @@ int peakVector(StackVector vector) {
     return vector.dataArray[vector.length - 1];
 }
 
-int popVector(StackVector *vector) {
+double popVector(StackVector *vector) {
     if (vector->length == 0) {
         printf("Error: empty stack");
         return 0;

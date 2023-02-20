@@ -28,9 +28,9 @@ int peakVector(StackVector vector);
 
 int peakList(StackList vector);
 
-int popVector(StackVector *vector);
+double popVector(StackVector *vector);
 
-int popList(StackList *vector);
+double popList(StackList *vector);
 
 bool pushVector(StackVector *vector, double value);
 

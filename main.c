@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <malloc.h>
 #include "myStack.h"
 #include "stringHelper.h"
 #include "calculatorHelper.h"
@@ -8,19 +9,9 @@
 
 int main() {
 
-/*
-    Stack myStack = createStack();
-    push(&myStack, 4);
-    push(&myStack, 5);
-
-    printf("is working\n");
-    while (myStack.length != 0) {
-        printf("value is: %d\n", pop(&myStack));
-    }
-*/
     char *inputString = getLine();
     calculate(inputString);
-
+    free(inputString);
 
     return 0;
 }

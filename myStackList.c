@@ -16,7 +16,7 @@ int peakList(StackList stackList) {
     return stackList.next->data;
 }
 
-int popList(StackList *stackList) {
+double popList(StackList *stackList) {
     if (stackList == NULL) {
         printf("Error: null pointer exception");
         return 0;

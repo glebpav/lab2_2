@@ -12,8 +12,10 @@ char **getElementsArray(char *inputString, int *elementsArrayLen) {
         elementsArray = realloc(elementsArray, (*elementsArrayLen + 1) * sizeof(char *));
         elementsArray[*elementsArrayLen] = strdup(buffer);
         *elementsArrayLen += 1;
+        // free(buffer);
         buffer = strtok(NULL, " ");
     }
+    free(stringDuplicate);
     return elementsArray;
 }
 
@@ -45,13 +47,14 @@ char *getLine(void) {
         if ((*line++ = c) == '\n')
             break;
     }
+    *line--;
     *line = '\0';
     return linep;
 }
 
 bool isDigit(char *randomString) {
     for (int i = 0; i < strlen(randomString); ++i) {
-        if (randomString[i] > '9') return false;
+        if (randomString[i] > '9' || randomString[i] < '0') return false;
     }
     return true;
 }
