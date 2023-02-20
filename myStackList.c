@@ -27,14 +27,14 @@ int popList(StackList *stackList) {
     }
 
     Item *deletingItem = stackList->next;
-    int deletingItemData = deletingItem->data;
+    double deletingItemData = deletingItem->data;
     stackList->next = deletingItem->next;
     stackList->length -= 1;
     free(deletingItem);
     return deletingItemData;
 }
 
-bool pushList(StackList *vector, int value) {
+bool pushList(StackList *vector, double value) {
     Item *newItem = calloc(1, sizeof(Item));
     newItem->next = vector->next;
     newItem->data = value;

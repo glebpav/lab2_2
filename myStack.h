@@ -1,17 +1,17 @@
-#ifndef MY_STACK_H
-#define MY_STACK_H
+#define MAX_VECTOR_LEN 64
 
 #include "stdbool.h"
 
-#define MAX_VECTOR_LEN 64
+#ifndef MY_STACK_H
+#define MY_STACK_H
 
 typedef struct Item {
-    int data;
+    double data;
     struct Item *next;
 } Item;
 
 typedef struct StackVector {
-    int dataArray[MAX_VECTOR_LEN];
+    double dataArray[MAX_VECTOR_LEN];
     int length;
 } StackVector;
 
@@ -21,34 +21,39 @@ typedef struct StackList {
 } StackList;
 
 StackVector createStackVector();
+
 StackList createStackList();
 
 int peakVector(StackVector vector);
+
 int peakList(StackList vector);
 
 int popVector(StackVector *vector);
+
 int popList(StackList *vector);
 
-bool pushVector(StackVector *vector, int value);
-bool pushList(StackList *vector, int value);
+bool pushVector(StackVector *vector, double value);
+
+bool pushList(StackList *vector, double value);
 
 void destroyVector(StackVector *vector);
-void destroyList(StackList *list);
 
-#ifdef list
-#   define createStack &createStackVector;
-#   define peak &peakVector;
-#   define pop &popVector;
-#   define push &pushVector;
-#   define destroy &destroyVector;
-#   define Stack StackVector;
+void destroyList(StackList *stackList);
+
+#ifdef Dlist
+#   define createStack createStackList
+#   define peak peakList
+#   define pop popList
+#   define push pushList
+#   define destroy destroyList
+#   define Stack StackList
 #else
-#   define createStack &createStackList;
-#   define peak &peakList;
-#   define pop &popList;
-#   define push &pushList;
-#   define destroy &destroyList;
-#   define Stack StackList;
+#   define createStack createStackVector
+#   define peak peakVector
+#   define pop popVector
+#   define push pushVector
+#   define destroy destroyVector
+#   define Stack StackVector
 #endif
 
 #endif

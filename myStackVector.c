@@ -25,7 +25,7 @@ int popVector(StackVector *vector) {
     return vector->dataArray[vector->length];
 }
 
-bool pushVector(StackVector *vector, int value) {
+bool pushVector(StackVector *vector, double value) {
     if (vector == NULL || vector->dataArray == NULL) {
         printf("Error: NULL pointer exception");
         return false;

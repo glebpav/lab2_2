@@ -3,4 +3,4 @@ project(lab2_2 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(lab2_2 main.c myStackList.c myStackVector.c calculatorHelper.c calculatorHelper.h)
+add_executable(lab2_2 main.c myStackList.c myStackVector.c calculatorHelper.c calculatorHelper.h stringHelper.c stringHelper.h)
