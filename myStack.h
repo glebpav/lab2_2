@@ -1,4 +1,4 @@
-#define MAX_VECTOR_LEN 64
+#define MAX_VECTOR_LEN 3
 
 #include "stdbool.h"
 

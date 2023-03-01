@@ -10,7 +10,7 @@
 int main() {
 
     char *inputString = getLine();
-    calculate(inputString);
+    if (inputString != NULL) calculate(inputString);
     free(inputString);
 
     return 0;

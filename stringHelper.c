@@ -24,13 +24,15 @@ char *getLine(void) {
     size_t lenmax = 100, len = lenmax;
     int c;
 
-    if (line == NULL)
-        return NULL;
+    if (line == NULL) return NULL;
 
     for (;;) {
         c = fgetc(stdin);
-        if (c == EOF)
-            break;
+        if (c == EOF) {
+            free(line);
+            printf("Good buy???");
+            return NULL;
+        }
 
         if (--len == 0) {
             len = lenmax;
@@ -44,8 +46,7 @@ char *getLine(void) {
             linep = linen;
         }
 
-        if ((*line++ = c) == '\n')
-            break;
+        if ((*line++ = c) == '\n') break;
     }
     *line--;
     *line = '\0';
